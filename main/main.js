@@ -4,14 +4,15 @@ import { error_check } from '../check/check.js';
 import { scenario } from 'k6/execution';
 
 import { Landingpage } from '../api/landingpage.js';
+import { digital_health } from '../api/digital_health.js';
 
 
 
 //============================================================================
 
 export default function () {    //เรียกใช้ API ใน export default function
-  response = Landingpage()
-
+  //response = Landingpage()
+  response = digital_health()
   
   error_check(response);
   sleep(1)
